@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    overflow: hidden;
+    position: relative;
+    font-size: 14px;
+    li {
+        list-style: none;
+    }
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        color: unset;
+        text-decoration: none;
+        &:hover {
+            color: unset;
+        }
+    }
+    button {
+        min-width: unset;
+    }
+    .MuiDrawer-paperAnchorDockedLeft {
+        border: unset;
+    }
+    .container-fluid {
+        padding: 0;
+    }
+    .MuiTableRow-head {
+        background-color: #358600;
+        th {
+            color: #fff;
+            font-family: unset;
+            font-weight: 600;
+        }
+    }
+    .MuiTableRow-root {
+        &:nth-child(even) {
+            background-color: #eeeeee;
+        }
+    }
+}
+html ::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 8px;
+}
+html ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.2);
+}
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.mb-30 {
+    margin-bottom: 30px;
+}

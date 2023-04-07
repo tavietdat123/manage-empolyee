@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import LayoutDefault from './App/Layout/Layout';
+import { publicRoute } from './router';
+import { Fragment } from 'react';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                {publicRoute.map((el, index) => {
+                    const Element = el.component;
+                    let Layout = LayoutDefault;
+                    if (el.layout === null) {
+                        Layout = Fragment;
+                    }
+                    return (
+                        <Route
+                            key={index}
+                            path={el.path}
+                            element={
+                                <Layout>
+                                    <Element />
+                                </Layout>
+                            }
+                        />
+                    );
+                })}
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
